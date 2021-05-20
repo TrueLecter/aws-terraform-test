@@ -1,4 +1,4 @@
-name: CI to Docker Hub 
+name: Build and push receiver Docker image 
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - apps/receiver/*
+      - .github/workflows/build-receiver.yml
 
 jobs:
   push-receiver:

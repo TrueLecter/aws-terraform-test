@@ -1,4 +1,4 @@
-name: CI to Docker Hub 
+name: Build and push publisher Docker image 
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - apps/publisher/*
+      - .github/workflows/build-publisher.yml
 
 jobs:
   push-publisher:
