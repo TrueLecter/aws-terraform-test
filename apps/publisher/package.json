@@ -6,7 +6,7 @@
     "start": "node lib/index.js"
   },
   "name": "publisher",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tech task publisher for SQS",
   "main": "index.js",
   "author": "TrueLecter",

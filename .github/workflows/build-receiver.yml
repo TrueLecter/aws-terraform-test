@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - apps/receiver/*
 
 jobs:
   push-receiver:
@@ -18,7 +20,7 @@ jobs:
         id: tags
         run: |
           PACKAGE_VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' apps/publisher/package.json)
-          echo ::set-output name=versions::truelecter86/tt-receiver:$PACKAGE_VERSION truelecter86/tt-receiver:latest
+          echo ::set-output name=versions::truelecter86/tt-receiver:$PACKAGE_VERSION,truelecter86/tt-receiver:latest
       - name: Cache Docker layers
         uses: actions/cache@v2
         with:

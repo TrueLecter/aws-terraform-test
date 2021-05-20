@@ -9,7 +9,7 @@ RUN groupadd --gid 9001 publisher \
     && npm install --cache /tmp/cache --production \
     && rm -rf /tmp/cache \
     && chown publisher:publisher -R /opt/publisher \
-    && chown +x /opt/receiver/entrypoint.sh
+    && chmod +x /opt/receiver/entrypoint.sh
 
 USER publisher
 
