@@ -1,7 +1,7 @@
 FROM node:16.2.0-buster-slim
 
 WORKDIR /opt/receiver
-COPY lib/ package*.json entrypoint.sh /opt/receiver/
+COPY . /opt/receiver/
 
 RUN groupadd --gid 9001 receiver \
     && useradd -M --uid 9001 --no-user-group --group receiver receiver \

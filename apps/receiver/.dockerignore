@@ -1,0 +1,6 @@
+*
+
+!lib/*.js
+!package.json
+!package-lock.json
+!entrypoint.sh

@@ -1,7 +1,7 @@
 FROM node:16.2.0-buster-slim
 
 WORKDIR /opt/publisher
-COPY lib/ package*.json entrypoint.sh /opt/publisher/
+COPY . /opt/publisher/
 
 RUN groupadd --gid 9001 publisher \
     && useradd -M --uid 9001 --no-user-group --group publisher publisher \
