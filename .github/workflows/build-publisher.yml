@@ -10,6 +10,8 @@ on:
 
 jobs:
   push-publisher:
+    env:
+      DOCKER_IMAGE_TAG: truelecter86/tt-publisher
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,7 +23,7 @@ jobs:
         id: tags
         run: |
           PACKAGE_VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' apps/publisher/package.json)
-          echo ::set-output name=versions::truelecter86/tt-publisher:$PACKAGE_VERSION,truelecter86/tt-publisher:latest
+          echo ::set-output name=versions::$DOCKER_IMAGE_TAG:$PACKAGE_VERSION,$DOCKER_IMAGE_TAG:latest
       - name: Cache Docker layers
         uses: actions/cache@v2
         with:
