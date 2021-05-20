@@ -13,7 +13,10 @@ async function wait(time) {
 
 (async () => {
 	while (true) {
-		await publish(generateMessage());
+		const message = generateMessage();
+		await publish(message);
+
+		console.log('Sent: ', message);
 		await wait(INTERVAL);
 	}
 })().catch(e => {

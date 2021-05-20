@@ -2,8 +2,11 @@
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.16.0"
   },
+  "scripts": {
+    "start": "node lib/index.js"
+  },
   "name": "publisher",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Tech task publisher for SQS",
   "main": "index.js",
   "author": "TrueLecter",
